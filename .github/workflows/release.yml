@@ -1,0 +1,47 @@
+name: release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build_and_release:
+    name: build_release
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: setup
+      uses: actions-rs/toolchain@v1
+      with:
+        profile: minimal
+        toolchain: stable
+        override: true
+
+    - name: build
+      uses: actions-rs/cargo@v1
+      with:
+        command: build
+        args: --release --verbose
+
+    - name: archive
+      run: |
+        if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            tar czvf clip_key_sanitizer-${{ matrix.os }}.tar.gz -C ./target/release clip_key_sanitizer.exe
+        else
+            tar czvf clip_key_sanitizer-${{ matrix.os }}.tar.gz -C ./target/release clip_key_sanitizer
+        fi
+      shell: bash
+
+    - name: release
+      id: create_release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "clip_key_sanitizer-${{ matrix.os }}.tar.gz"
+        generateReleaseNotes: true
