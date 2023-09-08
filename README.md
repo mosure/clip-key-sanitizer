@@ -3,7 +3,7 @@
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mosure/clip-key-sanitizer/Rust)](https://github.com/mosure/clip-key-sanitizer/actions)
 [![GitHub release](https://img.shields.io/github/release/mosure/clip-key-sanitizer.svg)](https://GitHub.com/mosure/clip-key-sanitizer/releases/)
-[![GitHub license](https://img.shields.io/github/license/mosure/clip-key-sanitizer.svg)](https://github.com/mosure/clip-key-sanitizer/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/mosure/clip-key-sanitizer.svg)](https://github.com/mosure/clip-key-sanitizer/blob/main/LICENSE)
 
 ![Clip Key Sanitizer Banner](./docs/banner.png)
 
