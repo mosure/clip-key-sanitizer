@@ -9,24 +9,6 @@
 
 Clip Key Sanitizer is a utility tool that monitors keyboard input and clipboard text to identify and sanitize sequences of characters from a predefined deny list.
 
-## 🚀 Installation
-
-1. Download the latest [release](https://github.com/mosure/clip-key-sanitizer/releases) for your platform.
-2. Extract and run the binary.
-
-## ⚙️ Usage
-
-Run the binary:
-
-```bash
-./clip_key_sanitizer
-```
-
-The program will now monitor your keyboard inputs and clipboard for predefined sequences, and sanitize them if detected.
-
-## 📜 Deny List
-
-To modify the deny list, update the `denylist.txt` file located in the project directory.
 
 ## 🛠️ Development
 
@@ -42,6 +24,10 @@ Build and run:
 ```bash
 cargo run
 ```
+
+## 📜 Deny List
+
+To modify the deny list, update the `deny.txt` file located in the `src` directory.
 
 
 ## 📜 License
